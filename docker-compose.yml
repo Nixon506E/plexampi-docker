@@ -1,14 +1,14 @@
-version: '2'
+version: '3.7'
 
 services:
   plexamp:
     container_name: plexamp
+    image: plexamp:4.6.2
     build:
       context: ./
-    image: plexamp:v2.0.0b2
     devices:
-      - "/dev/snd:/dev/snd"
+     - "/dev/snd:/dev/snd"
     volumes:
-      - "./server.json:/root/.config/Plexamp/server.json"
+      - "./data:/root/.local/share/Plexamp/Settings"
     network_mode: host
     restart: unless-stopped

@@ -1,10 +1,32 @@
+# Plexamp Headless 4 for Raspberry PI using Docker.
 Based on <https://forums.plex.tv/t/suggestions-for-the-future-headless-rpi-support/218187/161>.
 
-Get a server.json file from existing Plexamp on desktop install and place it at the root of this repo.
+Update from https://github.com/malfario/plexamp-rpi-docker 
 
 ```
-docker build -t plexamp:2.0.0-b2 .
+git clone <repo> plexamp
+cd plexamp
+docker-compose build
 docker-compose up -d
 ```
 
-PS: Sign out and back into your existing install to get a new identifier/token for Plexamp desktop.
+First run, set token :
+```
+docker-compose exec plexamp bash
+node ~/plexamp/js/index.js
+```
+
+1. Get a token here: https://www.plex.tv/claim/
+2. And fill prompt.
+3. Set speaker name
+
+After setting up, run player:
+```
+docker-compose exec plexamp bash
+node ~/plexamp/js/index.js
+```
+
+You should be able to access web player here : http://YOUR_SERVER_IP:32500.
+
+You can now `stop/start` server by using `docker-composer down` or `docker-compose up -d`.
+
