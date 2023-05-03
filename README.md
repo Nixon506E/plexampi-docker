@@ -3,6 +3,8 @@ Based on <https://forums.plex.tv/t/suggestions-for-the-future-headless-rpi-suppo
 
 Update from https://github.com/malfario/plexamp-rpi-docker 
 
+![alt capture](https://raw.githubusercontent.com/cstaelen/plexampi-docker/master/screenshot/capture.png)
+
 ## Install
 
 ```
@@ -44,3 +46,7 @@ sudo systemctl enable docker-plexamp
 sudo service docker-plexamp.service start 
 sudo systemctl daemon-reload
 ```
+
+## Disclaimer
+This a small side project, i've got not time to maintain it.
+For PR, request, and updates, please help yourself and fork :)
