@@ -3,6 +3,8 @@ Based on <https://forums.plex.tv/t/suggestions-for-the-future-headless-rpi-suppo
 
 Update from https://github.com/malfario/plexamp-rpi-docker 
 
+## Install
+
 ```
 git clone <repo> plexamp
 cd plexamp
@@ -20,6 +22,7 @@ node ~/plexamp/js/index.js
 2. And fill prompt.
 3. Set speaker name
 
+## Test run
 After setting up, run player:
 ```
 docker-compose exec plexamp bash
@@ -28,5 +31,16 @@ node ~/plexamp/js/index.js
 
 You should be able to access web player here : http://YOUR_SERVER_IP:32500.
 
+## run with docker
 You can now `stop/start` server by using `docker-composer down` or `docker-compose up -d`.
 
+## Start service on boot
+
+Update `WorkingDirectory` path in `docker-plexamp.service` :
+```
+chmod +x </path/to/repo/>docker-plexamp.service
+sudo ln -s </path/to/repo/>docker-plexamp.service /etc/systemd/system/docker-plexamp.service
+sudo systemctl enable docker-plexamp
+sudo service docker-plexamp.service start 
+sudo systemctl daemon-reload
+```
