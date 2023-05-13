@@ -3,7 +3,7 @@ version: '3.7'
 services:
   plexamp:
     container_name: plexamp
-    image: plexamp:4.7.3
+    image: plexamp:4.7.4
     build:
       context: ./
     devices:
